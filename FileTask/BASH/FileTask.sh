@@ -14,7 +14,12 @@ else
 fi
 
 # If directory does not exist, create.
-if [ ! -d $DIRECTORY ]; then mkdir -p $DIRECTORY; fi
+if [ -f $DIRECTORY ]; then 
+	echo "$DIRECTORY already exist as a file. Aborted."
+	exit
+elif [ ! -d $DIRECTORY ]; then 
+	mkdir -p $DIRECTORY
+fi
 
 # Initialise variables accordingly
 EXTENSION=".contact"

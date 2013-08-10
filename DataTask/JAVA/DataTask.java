@@ -29,7 +29,7 @@ public class DataTask {
 
 			if (f.isFile()) {
 				fileName = f.getName();
-				if (fileName.endsWith(".contact") || fileName.endsWith(".CONTACT")) {
+				if (fileName.contains("contact") || fileName.contains("CONTACT")) {
 					try {
 						scn = new Scanner(new File(fileName));
 						content = scn.nextLine();
